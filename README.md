@@ -11,7 +11,7 @@ A C++20 project featuring a classic and simple crosshair, that can be modified w
 - **Transparent Window**: The overlay is borderless and transparent, blending seamlessly with the desktop or game.
 - **Real-Time Configuration**: Modify crosshair settings dynamically using a configuration menu.
 - **Settings Persistence**: Save and load crosshair settings using a JSON file.
-- ![C++](https://img.shields.io/badge/C%2B%2B-Standard-blue?logo=c%2B%2B&logoColor=white) ![GLFW](https://img.shields.io/badge/library-GLFW-blue?logo=glfw) ![nlohmann/json](https://img.shields.io/badge/json-nlohmann--json-yellow?logo=json) ![Dear ImGui](https://img.shields.io/badge/Gui-Dear%20ImGui-lightgreen?logo=imgui) ![Windows](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Standard-blue?logo=c%2B%2B&logoColor=white) ![GLFW](https://img.shields.io/badge/GLFW-F26F21?logo=glfw&logoColor=white) ![nlohmann/json](https://img.shields.io/badge/json-nlohmann--json-yellow?logo=json) ![Dear ImGui](https://img.shields.io/badge/Gui-Dear%20ImGui-lightgreen?logo=imgui) ![Windows](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
 
 ## Getting Started
 
