@@ -27,7 +27,7 @@ project "Crosshair"
     }
 
     links {
-        "glfw3",
+        "glfw3dll",
         "opengl32",
         "imgui"
     }
