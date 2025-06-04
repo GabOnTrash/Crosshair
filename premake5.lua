@@ -1,9 +1,9 @@
-workspace "CrosshairOverlay"
+workspace "Crosshair"
     architecture "x64"
     configurations { "Release" }
     startproject "CrosshairOverlay"
 
-project "CrosshairOverlay"
+project "Crosshair"
     kind "WindowedApp"
     language "C++"
     cppdialect "C++20"
