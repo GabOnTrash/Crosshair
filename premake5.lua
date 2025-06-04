@@ -1,6 +1,6 @@
 workspace "CrosshairOverlay"
     architecture "x64"
-    configurations { "Debug", "Release" }
+    configurations { "Release" }
     startproject "CrosshairOverlay"
 
 project "CrosshairOverlay"
@@ -23,7 +23,7 @@ project "CrosshairOverlay"
     }
 
     libdirs {
-        "$(VCPKG_ROOT)/installed/x64-windows/lib"
+        "$(VCPKG_ROOT)/installed/x64-windows-static/lib"
     }
 
     links {
