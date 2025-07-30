@@ -38,7 +38,7 @@ void Crosshair::Start()
 
         if (glfwGetKey(MainWindow, GLFW_KEY_F2) == GLFW_PRESS)
             activeMenu = true;
-
+     
         (activeMenu == true && !glfwWindowShouldClose(MenuWindow)) ? RenderMenu() : glfwHideWindow(MenuWindow);
     }
     KillContext();
@@ -127,12 +127,25 @@ void Crosshair::RenderMenu()
         SaveSettings();
         activeMenu = false;
     }
+    
+    int glfwX, glfwY;
+    glfwGetWindowPos(MenuWindow, &glfwX, &glfwY);
+
+    static ImVec2 lastPos = ImGui::GetWindowPos();
+
+    if (ImGui::GetWindowPos().x != lastPos.x || ImGui::GetWindowPos().y != lastPos.y)
+    {
+        glfwSetWindowPos(MenuWindow,
+            static_cast<int>(glfwX + ImGui::GetWindowPos().x - 75),
+            static_cast<int>(glfwY + ImGui::GetWindowPos().y - 75));
+
+        lastPos = ImGui::GetWindowPos();
+    }
 
     ImGui::End();
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
     glfwSwapBuffers(MenuWindow);
 }
 
@@ -150,10 +163,10 @@ void Crosshair::InitMainWindow()
 }
 void Crosshair::InitMenuWindow()
 {
-    MenuWindow = glfwCreateWindow(500, 400, "Menu", nullptr, nullptr);
+    MenuWindow = glfwCreateWindow(500, 500, "Menu", nullptr, nullptr);
 
-    glfwSetWindowSize(MenuWindow, screenWidth, screenHeight - 50);
-    glfwSetWindowPos(MenuWindow, 0, 0);
+    glfwSetWindowPos(MenuWindow, 50, 50);
+    glfwSetWindowSize(MenuWindow, 400, 400);
 
     ImGui::CreateContext();
     ImGui::StyleColorsDark();
@@ -172,7 +185,7 @@ void Crosshair::KillContext()
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 
-    glfwDestroyWindow(MainWindow);                                                                                          // elimina la finestra
+    glfwDestroyWindow(MainWindow);
     glfwDestroyWindow(MenuWindow);
 }
 
